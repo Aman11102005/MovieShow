@@ -28,11 +28,11 @@ const syncUserCreation = inngest.createFunction(
 const syncUserDeletion = inngest.createFunction(
   { id: "delete-user-from-clerk" },
   { event: "clerk/user.deleted" },
-  async ({ data }) => {
-    if (!data) {
+  async (event) => {
+    if (!event.data) {
       throw new Error("Event data is undefined");
     }
-    const { id } = data;
+    const { id } = event.data;
     await User.findByIdAndDelete(id);
   }
 );
