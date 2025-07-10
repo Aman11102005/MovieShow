@@ -9,6 +9,9 @@ const syncUserCreation = inngest.createFunction(
   { id: "sync-user-from-clerk" },
   { event: "clerk/user.created" },
   async (event) => {
+    if (!event.data) {
+      throw new Error("Event data is undefined");
+    }
     const { id, first_name, last_name, email_addresses, image_url } =
       event.data;
     const userdata = {
@@ -23,22 +26,26 @@ const syncUserCreation = inngest.createFunction(
 
 // Inngest Function to delete user data from database
 const syncUserDeletion = inngest.createFunction(
-  { id: "delete-user-with-clerk" },
+  { id: "delete-user-from-clerk" },
   { event: "clerk/user.deleted" },
-  async (event) => {
-    const { id } = event.data;
-
+  async ({ data }) => {
+    if (!data) {
+      throw new Error("Event data is undefined");
+    }
+    const { id } = data;
     await User.findByIdAndDelete(id);
   }
 );
 
-// Inngest Function to update user data in database
+// Inngest Function to update user data in the database
 const syncUserUpdation = inngest.createFunction(
   { id: "update-user-from-clerk" },
   { event: "clerk/user.updated" },
-  async (event) => {
-    const { id, first_name, last_name, email_addresses, image_url } =
-      event.data;
+  async ({ data }) => {
+    if (!data) {
+      throw new Error("Event data is undefined");
+    }
+    const { id, first_name, last_name, email_addresses, image_url } = data;
     const userdata = {
       _id: id,
       email: email_addresses[0].email_address,
@@ -49,4 +56,4 @@ const syncUserUpdation = inngest.createFunction(
   }
 );
 
-export const functions = [syncUserCreation, syncUserDeletion, syncUserUpdation ];
+export const functions = [syncUserCreation, syncUserDeletion, syncUserUpdation];
