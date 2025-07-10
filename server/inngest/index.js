@@ -6,10 +6,12 @@ export const inngest = new Inngest({ id: "movie-ticket-booking" });
 
 // Helper to safely extract user data
 function extractUserData(event) {
+  // If event is an array, use the first element
+  const actualEvent = Array.isArray(event) ? event[0] : event;
   // Log the event for debugging
-  console.log("Inngest event received:", JSON.stringify(event, null, 2));
+  console.log("Inngest event received:", JSON.stringify(actualEvent, null, 2));
   // Try to get data from event.data or event.data.data or event.data.object
-  let data = event.data || event?.data?.data || event?.data?.object || event?.data?.user;
+  let data = actualEvent.data || actualEvent?.data?.data || actualEvent?.data?.object || actualEvent?.data?.user;
   if (!data) throw new Error("Event data is undefined");
   return data;
 }
