@@ -8,11 +8,15 @@ export const inngest = new Inngest({ id: "movie-ticket-booking" });
 function extractUserData(event) {
   // If event is an array, use the first element
   const actualEvent = Array.isArray(event) ? event[0] : event;
-  // Log the event for debugging
-  console.log("Inngest event received:", JSON.stringify(actualEvent, null, 2));
-  // Try to get data from event.data or event.data.data or event.data.object
+  console.log("Inngest event (raw):", JSON.stringify(event, null, 2));
+  console.log("Inngest event (actualEvent):", JSON.stringify(actualEvent, null, 2));
+  if (!actualEvent) {
+    throw new Error("Event is undefined or empty array");
+  }
   let data = actualEvent.data || actualEvent?.data?.data || actualEvent?.data?.object || actualEvent?.data?.user;
-  if (!data) throw new Error("Event data is undefined");
+  if (!data) {
+    throw new Error("Event data is undefined. Event received: " + JSON.stringify(actualEvent, null, 2));
+  }
   return data;
 }
 
