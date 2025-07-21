@@ -57,14 +57,13 @@ https://api.themoviedb.org/3/movie/${movieId}/credits`,
       };
       // add movie to database
       movie = await Movie.create(movieDetails);
-    
     }
     const showsToCreate = [];
     showsInput.forEach((show) => {
       const showDate = show.date;
       show.time.forEach((time) => {
         const dateTimeString = `${showDate}T${time}`;
-       
+
         showsToCreate.push({
           movie: movieId,
           showDateTime: new Date(dateTimeString),
@@ -80,9 +79,8 @@ https://api.themoviedb.org/3/movie/${movieId}/credits`,
     // Trigger Inngest event
     await inngest.send({
       name: "app/show.added",
-      data: {movieTitle: movie.title}
-    })
-
+      data: { movieTitle: movie.title },
+    });
 
     res.json({ success: true, message: "Shows added successfully" });
   } catch (error) {
@@ -98,8 +96,6 @@ export const getShows = async (req, res) => {
       .populate("movie")
       .sort({ showDateTime: 1 });
 
-     
-      
     // filter unique show
     const uniqueShows = new Set(shows.map((show) => show.movie));
     res.json({ success: true, shows: Array.from(uniqueShows) });
@@ -121,15 +117,14 @@ export const getShow = async (req, res) => {
     });
     const movie = await Movie.findById(movieId);
     const dateTime = {};
-   
-    
+
     shows.forEach((show) => {
       const date = show.showDateTime.toISOString().split("T")[0];
       if (!dateTime[date]) {
         dateTime[date] = [];
       }
-    
-      dateTime[date].push({ time:show.showDateTime, showId: show._id });
+
+      dateTime[date].push({ time: show.showDateTime, showId: show._id });
     });
     res.json({ success: true, movie, dateTime });
   } catch (error) {
@@ -137,5 +132,3 @@ export const getShow = async (req, res) => {
     res.json({ success: false, message: error.message });
   }
 };
-
-

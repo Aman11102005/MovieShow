@@ -274,8 +274,8 @@ const sendNewShowNotification = inngest.createFunction(
     }
 
     return {
-      message: "Notifications sent."
-    }
+      message: "Notifications sent.",
+    };
   }
 );
 
@@ -286,5 +286,5 @@ export const functions = [
   releaseSeatsAndDeleteBooking,
   sendBookingConfirmationEmail,
   sendShowReminders,
-  sendNewShowNotification
+  sendNewShowNotification,
 ];

@@ -68,7 +68,7 @@ export const createBooking = async (req, res) => {
           unit_amount: Math.floor(booking.amount) * 100,
         },
         quantity: 1,
-      }
+      },
     ];
 
     const session = await stripeInstance.checkout.sessions.create({
@@ -88,11 +88,9 @@ export const createBooking = async (req, res) => {
     await inngest.send({
       name: "app/checkpayment",
       data: {
-        bookingId: booking._id.toString()
-      }
-    })
-
-
+        bookingId: booking._id.toString(),
+      },
+    });
 
     res.json({ success: true, url: session.url });
   } catch (error) {

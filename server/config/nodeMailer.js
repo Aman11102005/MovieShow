@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer'
+import nodemailer from "nodemailer";
 
 // Create a transporter for SMTP
 const transporter = nodemailer.createTransport({
@@ -10,15 +10,14 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const sendEmail = async ({to, subject, body}) => {
-    const response = await transporter.sendMail({
-        from:process.env.SENDER_EMAIL,
-        to,
-        subject,
-        html:body,
-
-    })
-    return response
-}
+const sendEmail = async ({ to, subject, body }) => {
+  const response = await transporter.sendMail({
+    from: process.env.SENDER_EMAIL,
+    to,
+    subject,
+    html: body,
+  });
+  return response;
+};
 
 export default sendEmail;
