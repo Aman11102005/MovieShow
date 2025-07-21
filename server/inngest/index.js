@@ -148,7 +148,7 @@ const sendBookingConfirmationEmail = inngest.createFunction(
       })}<br/>
       <strong>Time:</strong> ${new Date(
         booking.show.showDateTime
-      ).toLocaleString("en-US", {timeZone: "Asia/Kolkata" })}
+      ).toLocaleTimeString("en-US", {timeZone: "Asia/Kolkata" })}
     </p>
     <p>Enjoy the show! 🍿</p>
     <p>Thanks for booking with us! <br/>— MovieShow Team </p>
