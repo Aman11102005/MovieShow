@@ -23,7 +23,7 @@ const HeroSection = () => {
                 </div>
             </div>
             <p className='max-w-md text-gray-300'>
-                In a post-apocalyptic world, a group of survivors must band together to fight against a ruthless warlord and his army of mutants. As they navigate through the wasteland, they discover the true meaning of friendship and sacrifice.
+                In a post-apocalyptic world, a group of survivors must band together to fight against a ruthless warlord and his army of mutants.
             </p>
             <button onClick={() => navigate('/movies')} className='flex items-center gap-1 px-6 py-3 text-sm bg-primary hover:bg-primary-dull transition rounded-full font-medium cursor-pointer'>
                 explore movies
