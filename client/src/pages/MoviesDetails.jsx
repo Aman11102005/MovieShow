@@ -98,7 +98,7 @@ const MoviesDetails = () => {
             </button>
             <a href="#DateSelect" className='px-10 py-3 text-sm bg-primary hover:bg-primary-dull transition rounded-md font-medium cursor-pointer active:scale-95'>Buy Tickets</a>
             <button onClick={handleFavorite} className='bg-gray-700 p-2.5 rounded-full transition cursor-pointer active:scale-95'>
-              <Heart className={`w-5 h-5 ${(favoriteMovies.find(movie => movie._id === id)) ? "fill-primary text-primary" : ""}`} />
+              <Heart className={`w-5 h-5 ${(favoriteMovies.find(movie => movie._id === id)) ? "fill-primary2 text-primary2" : ""}`} />
             </button>
           </div>
         </div>

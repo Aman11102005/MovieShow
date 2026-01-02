@@ -17,8 +17,32 @@ export const assets = {
 
 export const dummyTrailers = [
     {
-        image: "https://i.ytimg.com/vi/gzUu-FJ7s-Y/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCZNxsLUY8MfMNgg5U20ZDN10BiJg",
-        videoUrl: 'https://youtu.be/gzUu-FJ7s-Y?si=TjorKoxw1_i6WLT4'
+        image: "https://i.ytimg.com/vi/aZXBFirj6b4/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDXXcKfMsb6zudRD_dbtymmQ3lmuw",
+        videoUrl: 'https://youtu.be/aZXBFirj6b4?si=MrdkzhbkmzRnF6Mg'
+    },
+    {
+        image: "https://i.ytimg.com/vi/ZdC5mFHPldg/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDgZ2eOtNtkvu3KwRKYK058yY00-Q",
+        videoUrl: 'https://youtu.be/t4x35oaxAG0?si=mQcx6QbDLpOxQAFc'
+    },
+    {
+        image: "https://i.ytimg.com/vi/YShVEXb7-ic/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDzrnMIEQa-_w6XBr70S5kaI5S2aA",
+        videoUrl: 'https://youtu.be/URSO9TKYDK8?si=LEyV7gNYnzTxTPAS'
+    },
+    {
+        image: "https://i.ytimg.com/vi/FSAz556s0fM/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAoJA3MsXWF3sIGuzb_IcALgNFtuA",
+        videoUrl: 'https://youtu.be/FSAz556s0fM?si=VJFdcCXmrq0Oyiq2'
+    },
+     {
+        image: "https://i.ytimg.com/vi/-E3lMRx7HRQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAazPcxZg5_GzyCLs7fHk3_nHhmmg",
+        videoUrl: 'https://youtu.be/-E3lMRx7HRQ?si=3PgeCx0OmulyZ0Q6'
+    },
+    {
+        image: "https://i.ytimg.com/vi/nb_fFj_0rq8/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCjPOqNNcZ_CCNIPO0KpuUl1O1Duw",
+        videoUrl: 'https://youtu.be/UuGf9fYHOpo?si=ANMD_wEeio-mqzjo'
+    },
+     {
+        image: "https://i.ytimg.com/vi/OCh0Xabsg4w/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDSaNGhG5BxCqLeSIf5icJZecGJ2A",
+        videoUrl: 'https://youtu.be/OCh0Xabsg4w?si=w1o6zTxDfb7CDDo9'
     },
     {
         image: "https://img.youtube.com/vi/-sAOWhvheK8/maxresdefault.jpg",

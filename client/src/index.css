@@ -3,8 +3,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #f84565;
-  --color-primary-dull: #d63854;
+  --color-primary: #175836;
+  --color-primary-dull: #114029;
+  --color-primary2: #f84565;  
+   
+  /* --color-primary2-dull: #d63854; */
+
 }
 
 * {

@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="md:max-w-96">
                     <img className="w-36 h-auto" src={assets.logo} alt="logo" />
                     <p className="mt-6 text-sm">
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        MovieShow is a fast, reliable, and user-friendly online ticket booking platform designed to make your entertainment experience seamless. Whether you're looking to book tickets for movies, concerts, plays, or live events, MovieShow lets you browse, select, and reserve your seats in just a few clicks.
                     </p>
                     <div className="flex items-center gap-2 mt-4">
                         <img src={assets.googlePlay} alt="google play" className="h-10 w-auto border border-white rounded" />
@@ -28,8 +28,8 @@ const Footer = () => {
                     <div>
                         <h2 className="font-semibold mb-5">Get in touch</h2>
                         <div className="text-sm space-y-2">
-                            <p>+1-234-567-890</p>
-                            <p>contact@example.com</p>
+                            <p>+91 6392861674</p>
+                            <p>amanjaiswalfea@gmail.com</p>
                         </div>
                     </div>
                 </div>
