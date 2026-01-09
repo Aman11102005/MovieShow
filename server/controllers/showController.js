@@ -63,15 +63,22 @@ https://api.themoviedb.org/3/movie/${movieId}/credits`,
       const showDate = show.date;
       show.time.forEach((time) => {
         const dateTimeString = `${showDate}T${time}`;
+        const dateObj = new Date(dateTimeString);
+
+if (isNaN(dateObj.getTime())) {
+  throw new Error(`Invalid dateTime: ${dateTimeString}`);
+}
 
         showsToCreate.push({
           movie: movieId,
-          showDateTime: new Date(dateTimeString),
+          // showDateTime: new Date(dateTimeString),
+          showDateTime: dateObj,
           showPrice,
           occupiedSeats: {},
         });
       });
     });
+
     if (showsToCreate.length > 0) {
       await Show.insertMany(showsToCreate);
     }
