@@ -1,5 +1,5 @@
-export const dateFormat = (date) => {
-    return new Date(date).toLocaleDateString('en-US', {
+export const dateTime = (date) => {
+    return new Date(date).toLocaleString("en-US", {
         weekday: 'short',
         month: 'long',
         day: 'numeric',
