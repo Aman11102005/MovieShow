@@ -79,6 +79,7 @@ https://api.themoviedb.org/3/movie/${movieId}/credits`,
 
         showsToCreate.push({
           movie: movieId,
+          // showDateTime: new Date(dateTimeString),
           showDateTime: dateObj,
           showPrice,
           occupiedSeats: {},
