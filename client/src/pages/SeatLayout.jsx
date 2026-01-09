@@ -137,7 +137,7 @@ const SeatLayout = () => {
           {show.dateTime[date].map((item) => (
             <div key={item} onClick={() => setSelectedTime(item)} className={`flex items-center px-6 py-2 gap-2 w-max rounded-r-md cursor-pointer transition ${selectedTime?.time === item.time ? 'bg-primary text-white' : 'hover:bg-primary'} `}>
               <ClockIcon className='w-4 h-4' />
-              <p className='text-sm'>{isoTimeFormat(item.time).slice(11)}</p>
+              <p className='text-sm'>{isoTimeFormat(item.time)}</p>
 
             </div>
 
