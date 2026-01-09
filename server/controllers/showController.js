@@ -62,16 +62,23 @@ https://api.themoviedb.org/3/movie/${movieId}/credits`,
     showsInput.forEach((show) => {
       const showDate = show.date;
       show.time.forEach((time) => {
-        const dateTimeString = `${showDate}T${time}`;
-        const dateObj = new Date(dateTimeString);
+        // showDate expected format: YYYY-MM-DD
+        // time expected format: HH:mm or HH:mm:ss (from datetime-local)
+        const [year, month, day] = showDate.split("-").map((v) => Number(v));
+        const tParts = time.split(":").map((v) => Number(v));
+        const hour = tParts[0] ?? 0;
+        const minute = tParts[1] ?? 0;
+        const second = tParts[2] ?? 0;
 
-if (isNaN(dateObj.getTime())) {
-  throw new Error(`Invalid dateTime: ${dateTimeString}`);
-}
+        // Construct Date using numeric components to ensure local timezone is used
+        const dateObj = new Date(year, month - 1, day, hour, minute, second);
+
+        if (isNaN(dateObj.getTime())) {
+          throw new Error(`Invalid date/time parts: ${showDate} ${time}`);
+        }
 
         showsToCreate.push({
           movie: movieId,
-          // showDateTime: new Date(dateTimeString),
           showDateTime: dateObj,
           showPrice,
           occupiedSeats: {},
